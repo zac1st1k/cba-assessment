@@ -1,0 +1,17 @@
+* {
+  font-family: arial, sans-serif;
+}
+table {
+  border: 2px solid #d9d9d9;
+}
+
+td, th {
+  border: 1px solid #d9d9d9;
+  padding: 10px;
+  border-right:none;
+  background:white;
+}
+
+th:last-child, td:last-child {
+  border-right: 1px solid #d9d9d9;
+}
