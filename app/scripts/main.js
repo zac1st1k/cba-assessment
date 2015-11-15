@@ -58,8 +58,8 @@ function init () {
     getNextFile(startTime, currencyList[i].path, populateTable, table);
   };
 
-  // for (var i = 0; i < currencyList.length; i++) {
-  for (var i = 3; i < 4; i++) {
+  for (var i = 0; i < currencyList.length; i++) {
+  // for (var i = 3; i < 4; i++) {
     updateTable(i, table);
   }
 
