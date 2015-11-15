@@ -1,3 +1,10 @@
+$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+$footer-bg-color: #262324;
+$footer-color: grey;
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
 * {
   font-family: arial, sans-serif;
 }
@@ -14,4 +21,91 @@ td, th {
 
 th:last-child, td:last-child {
   border-right: 1px solid #d9d9d9;
+}
+
+.container {
+  padding: 0;
+  width: 100%;
+  h2 {
+    font-weight: bold;
+    padding-left: 2%;
+  }
+  table {
+    width: 96%;
+    margin: 10px auto;
+  }
+  .footer {
+    padding-top: 10px;
+    background-color: $footer-bg-color;
+    color: $footer-color;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    .logo-cba-black {
+      background-size: contain;
+      margin-left: 30px;
+      float: left;
+      height: 50px;
+      width: 232px;
+      background-image: url(/assets/logo-cba-white.png);
+      background-repeat: no-repeat;
+    }
+
+    .footer-social {
+      float: right;
+      li {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+      }
+      .youtube {
+        background-image: url(/assets/icon-youtube.png);
+        background-repeat: no-repeat;
+
+      }
+      .facebook {
+        background-image: url(/assets/icon-facebook.png);
+        background-repeat: no-repeat;
+
+      }
+      .linkedin {
+        background-image: url(/assets/icon-linkedin.png);
+        background-repeat: no-repeat;
+
+      }
+      .twitter {
+        background-image: url(/assets/icon-twitter.png);
+        background-repeat: no-repeat;
+
+      }
+      .googleplus {
+        background-image: url(/assets/icon-googleplus.png);
+        background-repeat: no-repeat;
+
+      }
+      .blog {
+        background-image: url(/assets/icon-blog.png);
+        background-repeat: no-repeat;
+
+      }
+      .community {
+        background-image: url(/assets/icon-community.png);
+        background-repeat: no-repeat;
+
+      }
+    }
+    .footer-menu {
+      clear: both;
+      list-style-type: none;
+      li {
+        display: inline;
+        border-right: solid 1px $footer-color;
+        padding-right: 5px;
+      }
+      li:last-child {
+        border-right: none;
+      }
+    }
+  }
 }
