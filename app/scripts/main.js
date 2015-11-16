@@ -55,7 +55,7 @@ function init () {
   var table = document.getElementById('currency-table');
 
   var updateTable = function (i, table) {
-    getNextFile(startTime, currencyList[i].path, populateTable, table);
+    getNextFile(startTime, currencyList[i].path, populateTable, table, currencyList.length);
   };
 
   for (var i = 0; i < currencyList.length; i++) {
@@ -65,7 +65,7 @@ function init () {
 
 }
 
-function getNextFile (startTime, filePath, callback, table) {
+function getNextFile (startTime, filePath, callback, table, progressBarValue) {
 
   var xmlhttp = new XMLHttpRequest(), response;
 
@@ -77,7 +77,7 @@ function getNextFile (startTime, filePath, callback, table) {
 
         response = JSON.parse(xmlhttp.responseText);
 
-        callback(response, table);
+        callback(response, table, progressBarValue);
 
       }
 
@@ -96,7 +96,7 @@ function getNextFile (startTime, filePath, callback, table) {
 
 }
 
-function populateTable (nextFile, table) {
+function populateTable (nextFile, table, progressBarValue) {
 
   for (var i = 0; i < nextFile.currencies.length; i++) {
 
@@ -114,5 +114,11 @@ function populateTable (nextFile, table) {
     console.log("appended");
   }
   console.log("currency updated");
-
+  var progressBarEl = document.getElementsByClassName('progress-bar')[0];
+  var style = window.getComputedStyle(progressBarEl, null);
+  console.log('style ' , style.width);
+  console.log('window.innerWidth ' , window.innerWidth);
+  // debugger
+  progressBarEl.style.width = (parseFloat(style.width) + window.innerWidth/progressBarValue) + 'px';
+  console.log('progressBarEl.style.width ' , progressBarEl.style.width);
 }
