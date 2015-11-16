@@ -116,9 +116,6 @@ function populateTable (nextFile, table, progressBarValue) {
   console.log("currency updated");
   var progressBarEl = document.getElementsByClassName('progress-bar')[0];
   var style = window.getComputedStyle(progressBarEl, null);
-  console.log('style ' , style.width);
-  console.log('window.innerWidth ' , window.innerWidth);
-  // debugger
   progressBarEl.style.width = (parseFloat(style.width) + window.innerWidth/progressBarValue) + 'px';
   console.log('progressBarEl.style.width ' , progressBarEl.style.width);
 }

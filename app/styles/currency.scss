@@ -3,6 +3,7 @@ $footer-bg-color: #262324;
 $header-bg-color: #262324;
 $footer-color: grey;
 $primary-color: #EEC600;
+$secondary-color: #d9d9d9;
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
@@ -15,18 +16,18 @@ body {
   font-family: arial, sans-serif;
 }
 table {
-  border: 2px solid #d9d9d9;
+  border: 2px solid $secondary-color;
 }
 
 td, th {
-  border: 1px solid #d9d9d9;
+  border: 1px solid $secondary-color;
   padding: 10px;
   border-right:none;
   background:white;
 }
 
 th:last-child, td:last-child {
-  border-right: 1px solid #d9d9d9;
+  border-right: 1px solid $secondary-color;
 }
 
 .container {
@@ -69,8 +70,8 @@ th:last-child, td:last-child {
       padding-left: 20px;
       background-color: #f4f4f4;
       margin: 0;
-      height: 60px;
-      border-bottom: solid 1px #d9d9d9;
+      height: 61px;
+      border-bottom: solid 1px $secondary-color;
       .logo-cba-black {
         display: inline-block;
         background-image: url(/assets/logo-cba-black.png);
@@ -78,8 +79,6 @@ th:last-child, td:last-child {
         background-position: left;
         height: 60px;
         width: 233px;
-        padding-right: 30px;
-        border-right: solid 1px #d9d9d9;
       }
       li {
         display: inline-block;
@@ -90,11 +89,16 @@ th:last-child, td:last-child {
           color: grey;
         }
       }
+      li:first-child {
+        height: 60px;
+        padding-right: 30px;
+        border-right: solid 1px $secondary-color;
+      }
       li:not(:first-child) {
         padding-left: 30px;
         padding-right: 40px;
         border-left: solid 1px white;
-        border-right: solid 1px #d9d9d9;
+        border-right: solid 1px $secondary-color;
       }
     }
   }
