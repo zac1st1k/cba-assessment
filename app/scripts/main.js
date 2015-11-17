@@ -123,6 +123,8 @@
 
     }
 
+    //Progress bar animation
+
     var progressBarEl = document.getElementsByClassName('progress-bar')[0];
 
     var style = window.getComputedStyle(progressBarEl, null);
