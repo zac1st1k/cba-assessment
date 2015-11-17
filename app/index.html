@@ -21,30 +21,38 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
-
   </head>
+
   <body>
+
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
     <div class="container">
+
       <div class="header">
-        <ul class="tabs">
+
+        <ul class="tabs hide-for-mobile">
           <li class="active"><a href="#">Personal<span class="carrot"></span></a></li>
           <li><a href="#">Business<span class="carrot"></span></a></li>
           <li><a href="#">Corporate<span class="carrot"></span></a></li>
           <li><a href="#">About us<span class="carrot"></span></a></li>
         </ul>
+
         <ul class="tab-panel">
-          <li><a href="#" class="logo-cba-black"></a></li>
-          <li><a href="#">Can</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Support</a></li>
-          <li><a href="#">Tools</a></li>
+          <li><a class="burger-menu show-for-mobile" href="#" >&#9776;</a>
+          <li><a class="logo-cba-black" href="#"></a></li>
+          <li><a class="hide-for-mobile" href="#">Can</a></li>
+          <li><a class="hide-for-mobile" href="#">Products</a></li>
+          <li><a class="hide-for-mobile" href="#">Support</a></li>
+          <li><a class="hide-for-mobile" href="#">Tools</a></li>
         </ul>
+
       </div>
 
       <h2>Currency Rates</h2>
+
       <table cellspacing="0" border="0" id="currency-table">
         <tr>
           <th>Currency</th>
@@ -58,8 +66,10 @@
       </table>
 
       <div class="footer">
+
         <div class="progress-bar"></div>
         <div class="icon logo-cba-black"></div>
+
         <ul class="footer-social">
           <li class="icon youtube"></li>
           <li class="icon facebook"></li>
@@ -69,7 +79,8 @@
           <li class="icon blog"></li>
           <li class="icon community"></li>
         </ul>
-        <ul class="footer-menu">
+
+        <ul class="footer-menu hide-for-mobile">
           <li class="footer-menu-item">Privacy</li>
           <li class="footer-menu-item">Cookies</li>
           <li class="footer-menu-item">Important Information</li>
@@ -79,16 +90,16 @@
           <li class="footer-menu-item">CommSec</li>
           <li class="footer-menu-item">MyWealth</li>
         </ul>
-      </div>
-    </div>
 
+      </div>
+
+    </div>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
 
     <!-- build:js(.) scripts/plugins.js -->
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
@@ -104,7 +115,6 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
-
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>

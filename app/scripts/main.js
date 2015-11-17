@@ -7,6 +7,7 @@ window.onload = function () {
 function init () {
 
   var currencyList = [
+
     {"path": "currency.AUD.json"},
     {"path": "currency.USD.json"},
     {"path": "currency.GBP.json"},
@@ -52,15 +53,19 @@ function init () {
   ];
 
   var startTime = new Date().getTime();
+
   var table = document.getElementById('currency-table');
 
   var updateTable = function (i, table) {
+
     getNextFile(startTime, currencyList[i].path, populateTable, table, currencyList.length);
+
   };
 
   for (var i = 0; i < currencyList.length; i++) {
-  // for (var i = 3; i < 4; i++) {
+
     updateTable(i, table);
+
   }
 
 }
@@ -92,6 +97,7 @@ function getNextFile (startTime, filePath, callback, table, progressBarValue) {
   };
 
   xmlhttp.open("GET", "assets/" + filePath + '?cachebuster=' + startTime, true);
+
   xmlhttp.send();
 
 }
@@ -101,21 +107,24 @@ function populateTable (nextFile, table, progressBarValue) {
   for (var i = 0; i < nextFile.currencies.length; i++) {
 
     var row = document.createElement('tr');
+
     row.innerHTML =
       '<td>' + nextFile.currencies[i].currencyName + '</td>' +
       '<td>' + nextFile.currencies[i].currencyTitle + '</td>' +
-      '<td>' + nextFile.currencies[i].bbCashTChqs + '</td>' +
-      '<td>' + nextFile.currencies[i].bbForeignCheques + '</td>' +
-      '<td>' + nextFile.currencies[i].bbImt + '</td>' +
-      '<td>' + nextFile.currencies[i].bsCashTmcTChqs + '</td>' +
-      '<td>' + nextFile.currencies[i].bsImt + '</td>';
+      '<td>' + parseFloat(nextFile.currencies[i].bbCashTChqs).toFixed(4) + '</td>' +
+      '<td>' + parseFloat(nextFile.currencies[i].bbForeignCheques).toFixed(4) + '</td>' +
+      '<td>' + parseFloat(nextFile.currencies[i].bbImt).toFixed(4) + '</td>' +
+      '<td>' + parseFloat(nextFile.currencies[i].bsCashTmcTChqs).toFixed(4) + '</td>' +
+      '<td>' + parseFloat(nextFile.currencies[i].bsImt).toFixed(4) + '</td>';
 
     table.appendChild(row);
-    console.log("appended");
+
   }
-  console.log("currency updated");
+
   var progressBarEl = document.getElementsByClassName('progress-bar')[0];
+
   var style = window.getComputedStyle(progressBarEl, null);
+
   progressBarEl.style.width = (parseFloat(style.width) + window.innerWidth/progressBarValue) + 'px';
-  console.log('progressBarEl.style.width ' , progressBarEl.style.width);
+
 }
