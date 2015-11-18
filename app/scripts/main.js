@@ -62,11 +62,11 @@
 
     for (var i = 0; i < currencyList.length; i++) {
 
-      (function(i, table) {
+      (function() {
 
          return getNextFile(startTime, currencyList[i].path, populateTable, table, currencyList.length);
 
-      })(i, table);
+      })();
 
     }
 
@@ -129,7 +129,7 @@
 
     var style = window.getComputedStyle(progressBarEl, null);
 
-    progressBarEl.style.width = Math.round(parseFloat(style.width) + window.innerWidth/progressBarValue) + 'px';
+    progressBarEl.style.width = Math.ceil(parseFloat(style.width) + window.innerWidth/progressBarValue) + 'px';
 
   }
 
